@@ -19,6 +19,19 @@ Resources:
       AvailabilityZone: us-east-1b
       VpcId: !Ref firstVPC
       CidrBlock: 10.0.1.0/24
+  routeTableName:
+    Type: AWS::EC2::RouteTable
+    Properties:
+      VpcId: !Ref firstVPC
+  vpc-igtw:
+    Type: AWS::EC2::InternetGateway
+    Properties:
+  AttachGateway:
+    Type: AWS::EC2::VPCGatewayAttachment
+    Properties:
+      VpcId: !Ref firstVPC
+      InternetGatewayId: !Ref vpc-igw   
+          
        
        
 
