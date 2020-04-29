@@ -9,29 +9,27 @@ Resources:
   PublicSubnet1:
     Type: AWS::EC2::Subnet
     Properties:
-      AvailabilityZone: us-east-1a
+      AvailabilityZone: us-east-1
       VpcId: !Ref firstVPC
       CidrBlock: 10.0.0.0/24
       ## Public Subnet
   PublicSubnet2: 
     Type: AWS::EC2::Subnet
     Properties:
-      AvailabilityZone: us-east-1b
+      AvailabilityZone: us-east-2
       VpcId: !Ref firstVPC
       CidrBlock: 10.0.1.0/24
   routeTableName:
     Type: AWS::EC2::RouteTable
     Properties:
       VpcId: !Ref firstVPC
-  vpc-igtw:
+  InternetGatewayVPC:
     Type: AWS::EC2::InternetGateway
-    Properties:
-    InternetgatewayId: !Ref vpc-igtw 
-  AttachGateway:
+  AttachGatewayAttachmentVPC:
     Type: AWS::EC2::VPCGatewayAttachment
     Properties:
       VpcId: !Ref firstVPC
-      InternetGatewayId: !Ref vpc-igtw   
+      InternetGatewayId: !Ref InternetGatewayVPC
           
        
        
