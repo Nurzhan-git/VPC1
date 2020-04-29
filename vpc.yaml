@@ -5,14 +5,21 @@ Resources:
     Properties:
       CidrBlock: 10.0.0.0/16
       EnableDnsSupport: true
-      ## Rrivate Subnet
+      ## Private Subnet
   subnetName:
     Type: AWS::EC2::Subnet
     Properties:
       AvailabilityZone: us-east-1a
       VpcId: !Ref firstVPC
       CidrBlock: 10.0.0.0/24
-     
+      ## Public Subnet
+   subnetName:
+    Type: AWS::EC2::Subnet
+    Properties:
+      AvailabilityZone: us-east-1a
+      VpcId: !Ref firstVPC
+      CidrBlock: 10.0.1.0/24
+       
 
    
        
