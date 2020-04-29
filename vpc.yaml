@@ -26,6 +26,7 @@ Resources:
   vpc-igtw:
     Type: AWS::EC2::InternetGateway
     Properties:
+    InternetgatewayId: !Ref vpc-igtw 
   AttachGateway:
     Type: AWS::EC2::VPCGatewayAttachment
     Properties:
