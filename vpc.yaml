@@ -26,11 +26,11 @@ Resources:
       AvailabilityZone: us-east-1a
       VpcId: !Ref firstVPC
       CidrBlock: 10.0.1.0/24
-  # ## Route table
-  # routeTableName:
-  #   Type: AWS::EC2::RouteTable
-  #   Properties:
-  #     VpcId: !Ref firstVPC
+  ## Route table
+  RouteTable1:
+    Type: AWS::EC2::RouteTable
+    Properties:
+      VpcId: !Ref firstVPC
   # 
           
        
