@@ -10,15 +10,16 @@ Resources:
   AttachGateway:
     Type: AWS::EC2::VPCGatewayAttachment
     Properties:
-       VpcId: !Ref firstVPC
-       InternetGatewayId: !Ref InternetGatewayVPC
+      VpcId: !Ref firstVPC
+      InternetGatewayId: !Ref InternetGatewayVPC
   ## Private Subnet
-  # PublicSubnet1:
-  #   Type: AWS::EC2::Subnet
-  #   Properties:
-  #     AvailabilityZone: us-east-1a
-  #     VpcId: !Ref firstVPC
-  #     CidrBlock: 10.0.0.0/24
+  PrivateSubnet1:
+    Type: AWS::EC2::Subnet
+    Properties:
+      AvailabilityZone: us-east-1a
+      VpcId: !Ref firstVPC
+      CidrBlock: 10.0.0.0/24
+
   # ## Public Subnet
   # PublicSubnet: 
   #   Type: AWS::EC2::Subnet
