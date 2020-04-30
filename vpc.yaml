@@ -6,31 +6,31 @@ Resources:
       CidrBlock: 10.0.0.0/16
       EnableDnsSupport: true
   ## Private Subnet
-  PublicSubnet1:
-    Type: AWS::EC2::Subnet
-    Properties:
-      AvailabilityZone: us-east-1a
-      VpcId: !Ref firstVPC
-      CidrBlock: 10.0.0.0/24
-  ## Public Subnet
-  PublicSubnet: 
-    Type: AWS::EC2::Subnet
-    Properties:
-      AvailabilityZone: us-east-1a
-      VpcId: !Ref firstVPC
-      CidrBlock: 10.0.1.0/24
-  ## Route table
-  routeTableName:
-    Type: AWS::EC2::RouteTable
-    Properties:
-      VpcId: !Ref firstVPC
-  InternetGatewayVPC:
-    Type: AWS::EC2::InternetGateway
-  AttachGatewayAttachmentVPC:
-    Type: AWS::EC2::VPCGatewayAttachment
-    Properties:
-      VpcId: !Ref firstVPC
-      InternetGatewayId: !Ref InternetGatewayVPC
+  # PublicSubnet1:
+  #   Type: AWS::EC2::Subnet
+  #   Properties:
+  #     AvailabilityZone: us-east-1a
+  #     VpcId: !Ref firstVPC
+  #     CidrBlock: 10.0.0.0/24
+  # ## Public Subnet
+  # PublicSubnet: 
+  #   Type: AWS::EC2::Subnet
+  #   Properties:
+  #     AvailabilityZone: us-east-1a
+  #     VpcId: !Ref firstVPC
+  #     CidrBlock: 10.0.1.0/24
+  # ## Route table
+  # routeTableName:
+  #   Type: AWS::EC2::RouteTable
+  #   Properties:
+  #     VpcId: !Ref firstVPC
+  # InternetGatewayVPC:
+  #   Type: AWS::EC2::InternetGateway
+  # AttachGatewayAttachmentVPC:
+  #   Type: AWS::EC2::VPCGatewayAttachment
+  #   Properties:
+  #     VpcId: !Ref firstVPC
+  #     InternetGatewayId: !Ref InternetGatewayVPC
           
        
        
