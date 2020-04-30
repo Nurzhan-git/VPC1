@@ -31,11 +31,19 @@ Resources:
     Type: AWS::EC2::RouteTable
     Properties:
       VpcId: !Ref firstVPC
-  ## PublicSubnet1RouteTableAssociation:
+  PublicSubnet1RouteTableAssociation:
     Type: AWS::EC2::SubnetRouteTableAssociation
     Properties:
       RouteTableId: !Ref RouteTable1
       SubnetId: !Ref PublicSubnet1
+  ## 
+  DefaultPublicRoute:
+    Type: AWS::EC2::Route
+    DependsOn: InternetGatewayAttachment
+    Properties:
+      RouteTableId: !Ref RouteTable1
+      DestinationCidrBlock: 0.0.0.0/0
+      GatewayId: !Ref InternetGatewayVPC
 
   
           
