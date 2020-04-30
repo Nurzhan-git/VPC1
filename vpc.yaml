@@ -31,7 +31,13 @@ Resources:
     Type: AWS::EC2::RouteTable
     Properties:
       VpcId: !Ref firstVPC
-  # 
+  ## PublicSubnet1RouteTableAssociation:
+    Type: AWS::EC2::SubnetRouteTableAssociation
+    Properties:
+      RouteTableId: !Ref RouteTable1
+      SubnetId: !Ref PublicSubnet1
+
+  
           
        
        
